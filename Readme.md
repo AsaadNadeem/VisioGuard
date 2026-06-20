@@ -11,7 +11,6 @@ Simple MERN-stack project for uploading images, storing them in Cloudinary, and 
 ## Repo structure
 - `backend/` — Express API, routes, middleware, and utilities
 - `frontend/` — React app (create-react-app)
-- `uploads/` — (local uploads; ignored in git)
 
 ## Prerequisites
 - Node.js (16+ recommended)
@@ -86,7 +85,6 @@ Simple MERN-stack project for uploading images, storing them in Cloudinary, and 
 ## Repo structure
 - `backend/` — Express API, routes, middleware, and utilities
 - `frontend/` — React app (create-react-app)
-- `uploads/` — (local uploads; ignored in git)
 
 ## Prerequisites
 - Node.js (16+ recommended)
@@ -125,9 +123,5 @@ npm start
 The backend exposes routes under `/api` and `/users`. The server uses Cloudinary to upload images and Sightengine to evaluate them; moderation results are attached to requests before being saved.
 
 ## Notes
-- Local `backend/uploads` is ignored by default; files are uploaded to Cloudinary.
 - The backend expects `express.json()` body parsing and `cors` to be enabled (already configured).
 - If `nodemon` start script fails, run `node index.js` from the `backend` folder.
-
-## License
-MIT
