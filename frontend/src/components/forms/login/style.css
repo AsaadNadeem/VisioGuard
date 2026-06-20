@@ -1,0 +1,9 @@
+.responsive-box {
+  width: 450px;
+}
+
+@media (max-width: 576px) {
+  .responsive-box {
+    width: 90%;
+  }
+}

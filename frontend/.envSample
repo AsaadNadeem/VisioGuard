@@ -1,0 +1,8 @@
+# Copy this file to `.env` in the `frontend/` folder and update as needed.
+
+# Base URL for API requests (backend)
+REACT_APP_API_URL=http://localhost:5000
+
+# If you use client-side unsigned Cloudinary uploads, set these (optional):
+# REACT_APP_CLOUDINARY_CLOUD_NAME=your_cloud_name
+# REACT_APP_CLOUDINARY_UPLOAD_PRESET=your_unsigned_upload_preset
