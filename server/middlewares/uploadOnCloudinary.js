@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
-import fs from "fs";
+import streamifier from "streamifier";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -15,22 +15,26 @@ const uploadOnCloudinary = async (req, res, next) => {
   }
 
   try {
-    const uploadResult = await cloudinary.uploader.upload(req.file.path, {
-      resource_type: "image",
+    const result = await new Promise((resolve, reject) => {
+      const stream = cloudinary.uploader.upload_stream(
+        { resource_type: "image" },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+
+      streamifier.createReadStream(req.file.buffer).pipe(stream);
     });
 
-    req.cloudinaryUrl = uploadResult.secure_url;
-    req.cloudinaryPublicId = uploadResult.public_id;
+    req.cloudinaryUrl = result.secure_url;
+    req.cloudinaryPublicId = result.public_id;
 
     next();
-  } catch (error) {
-    console.error("Error uploading to Cloudinary:", error);
-    return res.status(500).json({ error: "Failed to upload image" });
-  } 
-  finally {
-    // clean up the local temp file regardless of outcome
-    fs.unlink(req.file.path, (err) => {
-      if (err) console.error("Failed to delete local temp file:", err);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Cloudinary upload failed",
     });
   }
 };
