@@ -1,0 +1,122 @@
+/* Full Page */
+
+.signup-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f4f7fb, #ffffff);
+}
+
+/* Card */
+
+.signup-card {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+}
+
+/* Logo */
+
+.signup-logo {
+    width: 90px;
+    height: auto;
+}
+
+/* Divider */
+
+.divider {
+    position: relative;
+    text-align: center;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #dee2e6;
+}
+
+.divider span {
+    position: relative;
+    background: white;
+    padding: 0 15px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Login link */
+
+.login-link {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Inputs */
+
+.form-control {
+    border-radius: 10px;
+    padding: 7px 14px;
+}
+
+/* Buttons */
+
+.btn {
+    border-radius: 10px;
+    min-width: 120px;
+    font-weight: 500;
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .signup-card {
+        margin: 15px;
+    }
+
+    .signup-logo {
+        width: 75px;
+    }
+
+}
+
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 30px;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 470px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.signup-card h2 {
+  color: #0d6efd;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+/* .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+} */
+
+.btn {
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .signup-card {
+    padding: 25px;
+  }
+}

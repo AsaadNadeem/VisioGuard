@@ -1,0 +1,18 @@
+#profile-dropdown {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+
+#profile-dropdown:focus,
+#profile-dropdown:active,
+#profile-dropdown:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#profile-dropdown::after {
+  margin-left: 8px;
+}

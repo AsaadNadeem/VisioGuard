@@ -1,0 +1,200 @@
+.hero-section{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+}
+
+@media (max-width:768px){
+
+    .hero-section{
+
+        min-height:auto;
+
+        padding-top:3rem !important;
+        padding-bottom:3rem !important;
+
+    }
+
+    .hero-section h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-section .lead{
+
+        font-size:1rem;
+
+    }
+
+}
+
+.moderation-card{
+
+    border:none;
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    background:#fff;
+
+}
+
+.moderation-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.image-wrapper{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.card-image{
+
+    height:260px;
+
+    width:100%;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+}
+
+.moderation-card:hover .card-image{
+
+    transform:scale(1.1);
+
+}
+
+.top-bar{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    right:15px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.category-badge{
+
+    backdrop-filter:blur(12px);
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    to top,
+    rgba(0,0,0,.92),
+    rgba(0,0,0,.15));
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:20px;
+
+    color:white;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.moderation-card:hover .overlay{
+
+    opacity:1;
+
+}
+
+.score{
+
+    margin-bottom:12px;
+
+}
+
+.score span{
+
+    font-size:.82rem;
+
+    display:block;
+
+    margin-bottom:5px;
+
+}
+
+.progress{
+
+    height:16px;
+
+    border-radius:20px;
+
+    background:#ffffff22;
+
+}
+
+.progress-bar{
+
+    font-size:.7rem;
+
+    font-weight:600;
+
+}
+
+.card-title{
+
+    font-weight:700;
+
+}
+
+.description{
+
+    color:#6b7280;
+
+    font-size:.93rem;
+
+    /* height:48px; */
+
+    overflow:hidden;
+
+}
+
+.footer-actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    background:white;
+
+    border:none;
+
+}

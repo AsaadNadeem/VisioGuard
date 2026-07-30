@@ -1,127 +1,364 @@
-# MERN Image Moderation App
+# 🛡️ VisioGuard
 
-Simple MERN-stack project for uploading images, storing them in Cloudinary, and running automated content moderation (nudity, weapons, gore) before saving metadata to MongoDB.
+**VisioGuard** is an AI-powered Content Moderation Platform that automatically analyzes uploaded images for inappropriate or unsafe content. It leverages the **Sightengine AI Moderation API** to detect nudity, weapons, and graphic violence, stores moderation results in MongoDB, and provides a clean dashboard for reviewing uploaded images.
 
-## Features
-- Image upload endpoint with Cloudinary storage
-- Automated moderation using Sightengine
-- MongoDB persistence for users and moderation results
-- Minimal React frontend for login/signup and upload UI
+---
 
-## Repo structure
-- `backend/` — Express API, routes, middleware, and utilities
-- `frontend/` — React app (create-react-app)
+## 📖 Overview
 
-## Prerequisites
-- Node.js (16+ recommended)
-- npm
-- A MongoDB instance (URI)
-- Cloudinary account (for image storage)
-- Sightengine account (for content moderation)
+Every day, thousands of images are uploaded to online platforms. Manually reviewing them is slow and impractical.
 
-## Environment variables
-Create a `.env` file in `backend/` containing at least:
+VisioGuard automates this process by:
 
-- `MONGO_URI` — MongoDB connection string
-- `PORT` — server port (e.g. 5000)
-- `CLOUDINARY_CLOUD_NAME` — Cloudinary cloud name
-- `CLOUDINARY_API_KEY` — Cloudinary API key
-- `CLOUDINARY_API_SECRET` — Cloudinary API secret
-- `SIGHTENGINE_USER` — Sightengine user
-- `SIGHTENGINE_SECRET` — Sightengine secret
+- Uploading images securely
+- Storing images on Cloudinary
+- Scanning images using AI
+- Calculating moderation scores
+- Displaying results in a responsive dashboard
 
-### Environment sample files
-This repo includes sample environment files for convenience:
+The project demonstrates a complete MERN stack application integrated with third-party cloud services and AI moderation.
 
-- `backend/.envSample` — copy to `backend/.env` and populate real values.
-- `frontend/.envSample` — copy to `frontend/.env` and update the `REACT_APP_*` values.
+---
 
-Example commands (from repository root):
+# ✨ Features
 
-```bash
-cp backend/.envSample backend/.env
-cp frontend/.envSample frontend/.env
+## 🔐 Authentication
+
+- User Registration
+- Email Verification using OTP
+- Google Sign-In
+- Secure Login
+- Password Hashing using bcrypt
+- JWT Authentication
+- Protected Routes
+
+---
+
+## 🖼 Image Moderation
+
+- Upload Images
+- Cloudinary Image Storage
+- AI Content Moderation
+- Nudity Detection
+- Weapon Detection
+- Gore Detection
+- Moderation Score Calculation
+
+---
+
+## 📊 Dashboard
+
+- Responsive Gallery
+- Moderation Score Progress Bars
+- Safety Status
+- Image Preview
+- User Information
+- Download Images
+- Save Images
+- Modern Card Design
+
+---
+
+## 👤 User Profile
+
+- Profile Information
+- Uploaded Images
+- Saved Images
+
+---
+
+## 🎨 UI
+
+- Responsive Design
+- Bootstrap 5
+- React Bootstrap Components
+- Modern Layout
+- Mobile Friendly
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- React Router
+- Axios
+- React Bootstrap
+- Bootstrap 5
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- Multer
+- Nodemailer
+
+---
+
+## Cloud Services
+
+- Cloudinary
+- Sightengine API
+- Google OAuth
+
+---
+
+# 📁 Project Structure
+
+```
+VisioGuard
+│
+├── client
+│   ├── public
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── App.jsx
+│   │   └── index.js
+│   │
+│   └── package.json
+│
+├── server
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── utils
+│   ├── config
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
 ```
 
-Notes for the frontend:
-- Create-React-App requires client env vars to be prefixed with `REACT_APP_`.
-- `REACT_APP_API_URL` should point to your backend (e.g. `http://localhost:5000`).
+---
 
-## Quick start
+# ⚙ Installation
 
-Backend
+## 1. Clone Repository
+
 ```bash
-cd backend
+git clone https://github.com/yourusername/VisioGuard.git
+
+cd VisioGuard
+```
+
+---
+
+## 2. Install Dependencies
+
+### Backend
+
+```bash
+cd server
+
 npm install
+```
+
+### Frontend
+
+```bash
+cd client
+
+npm install
+```
+
+---
+
+# 🔑 Environment Variables
+
+## Backend (.env)
+
+```env
+PORT=5000
+
+MONGO_URI=
+
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+SIGHTENGINE_USER=
+SIGHTENGINE_SECRET=
+
+EMAIL_USER=
+EMAIL_PASS=
+
+GOOGLE_CLIENT_ID=
+```
+
+---
+
+## Frontend (.env)
+
+```env
+REACT_APP_BACKEND_API=http://localhost:5000
+
+REACT_APP_GOOGLE_CLIENT_ID=
+```
+
+---
+
+# ▶ Running the Project
+
+## Backend
+
+```bash
+cd server
+
 npm start
 ```
 
-Frontend
+---
+
+## Frontend
+
 ```bash
-cd frontend
-npm install
+cd client
+
 npm start
 ```
 
-The backend exposes routes under `/api` and `/users`. The server uses Cloudinary to upload images and Sightengine to evaluate them; moderation results are attached to requests before being saved.
+Frontend runs on
 
-## Notes
-- Local `backend/uploads` is ignored by default; files are uploaded to Cloudinary.
-- The backend expects `express.json()` body parsing and `cors` to be enabled (already configured).
-- If `nodemon` start script fails, run `node index.js` from the `backend` folder.
-
-## License
-MIT
-# MERN Image Moderation App
-
-Simple MERN-stack project for uploading images, storing them in Cloudinary, and running automated content moderation (nudity, weapons, gore) before saving metadata to MongoDB.
-
-## Features
-- Image upload endpoint with Cloudinary storage
-- Automated moderation using Sightengine
-- MongoDB persistence for users and moderation results
-- Minimal React frontend for login/signup and upload UI
-
-## Repo structure
-- `backend/` — Express API, routes, middleware, and utilities
-- `frontend/` — React app (create-react-app)
-
-## Prerequisites
-- Node.js (16+ recommended)
-- npm
-- A MongoDB instance (URI)
-- Cloudinary account (for image storage)
-- Sightengine account (for content moderation)
-
-## Environment variables
-Create a `.env` file in `backend/` containing at least:
-
-- `MONGO_URI` — MongoDB connection string
-- `PORT` — server port (e.g. 5000)
-- `CLOUDINARY_CLOUD_NAME` — Cloudinary cloud name
-- `CLOUDINARY_API_KEY` — Cloudinary API key
-- `CLOUDINARY_API_SECRET` — Cloudinary API secret
-- `SIGHTENGINE_USER` — Sightengine user
-- `SIGHTENGINE_SECRET` — Sightengine secret
-
-## Quick start
-
-Backend
-```bash
-cd backend
-npm install
-npm start
+```
+http://localhost:3000
 ```
 
-Frontend
-```bash
-cd frontend
-npm install
-npm start
+Backend runs on
+
+```
+http://localhost:5000
 ```
 
-The backend exposes routes under `/api` and `/users`. The server uses Cloudinary to upload images and Sightengine to evaluate them; moderation results are attached to requests before being saved.
+---
 
-## Notes
-- The backend expects `express.json()` body parsing and `cors` to be enabled (already configured).
-- If `nodemon` start script fails, run `node index.js` from the `backend` folder.
+# 🔄 Application Workflow
+
+```
+User
+   │
+   ▼
+Login / Register
+   │
+   ▼
+Upload Image
+   │
+   ▼
+Cloudinary Upload
+   │
+   ▼
+Sightengine Analysis
+   │
+   ▼
+Store Result in MongoDB
+   │
+   ▼
+Display Moderation Dashboard
+```
+
+---
+
+# 📷 Screenshots
+
+Add screenshots here.
+
+```
+Home Page
+
+Upload Page
+
+Dashboard
+
+Profile
+
+Login
+
+Signup
+```
+
+---
+
+# 🔒 Security
+
+- Passwords are hashed using bcrypt.
+- JWT-based authentication.
+- Email verification before account creation.
+- Protected API routes.
+- Environment variables for sensitive credentials.
+
+---
+
+# 🚀 Future Improvements
+
+- Admin Dashboard
+- Appeal System
+- User Roles
+- Real-Time Notifications
+- Video Moderation
+- Batch Image Upload
+- Image Search
+- AI-generated Moderation Reports
+- Dark Mode
+- Analytics Dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a new branch.
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to GitHub.
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Asaad Nadeem**
+
+MERN Stack Developer
+
+GitHub:
+https://github.com/yourusername
+
+LinkedIn:
+https://linkedin.com/in/yourprofile
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
