@@ -146,7 +146,7 @@ VisioGuard
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/VisioGuard.git
+git clone https://github.com/AsaadNadeem/VisioGuard.git
 
 cd VisioGuard
 ```
@@ -193,6 +193,8 @@ EMAIL_USER=
 EMAIL_PASS=
 
 GOOGLE_CLIENT_ID=
+
+FRONTEND_URL=http://localhost:3000
 ```
 
 ---
@@ -267,25 +269,6 @@ Display Moderation Dashboard
 
 ---
 
-# 📷 Screenshots
-
-Add screenshots here.
-
-```
-Home Page
-
-Upload Page
-
-Dashboard
-
-Profile
-
-Login
-
-Signup
-```
-
----
 
 # 🔒 Security
 
@@ -301,12 +284,8 @@ Signup
 
 - Admin Dashboard
 - Appeal System
-- User Roles
 - Real-Time Notifications
-- Video Moderation
-- Batch Image Upload
 - Image Search
-- AI-generated Moderation Reports
 - Dark Mode
 - Analytics Dashboard
 
@@ -352,13 +331,7 @@ This project is licensed under the MIT License.
 MERN Stack Developer
 
 GitHub:
-https://github.com/yourusername
+https://github.com/AsaadNadeem
 
 LinkedIn:
-https://linkedin.com/in/yourprofile
-
----
-
-## ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
+https://linkedin.com/in/asaadnadeem686
